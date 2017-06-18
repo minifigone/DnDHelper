@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorpane" style="-fx-background-color: #f5f1dd;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.cs.castlet1.COMP1050.FinalProject.GUI">
+   <children>
+      <MenuBar id="#f5f1dd" prefHeight="25.0" prefWidth="1920.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="menuCharLoad" mnemonicParsing="false" onAction="#loadCharFromFile" onMenuValidation="#loadCharFromFile" text="Load Character" />
+                  <MenuItem fx:id="menuCharSave" mnemonicParsing="false" onAction="#saveCharToFile" onMenuValidation="#saveCharToFile" text="Save Character" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutY="24.0" prefHeight="955.0" prefWidth="1921.0" style="-fx-background-color: #f5f1dd;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Stats">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="813.0" layoutY="56.0" prefHeight="490.0" prefWidth="208.0" style="-fx-background-color: ffff;">
+                           <children>
+                              <CheckBox fx:id="perf" layoutX="3.0" layoutY="302.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="209.0" text="Performance (Cha)" />
+                              <TextField fx:id="perf_mod" alignment="CENTER" layoutX="157.0" layoutY="298.0" prefHeight="25.0" prefWidth="51.0" />
+                              <Text layoutX="87.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skills">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children></Pane>
+                        <TextField fx:id="str" alignment="CENTER" layoutX="58.0" layoutY="486.0" onAction="#strModChange" onInputMethodTextChanged="#strModChange" prefHeight="133.0" prefWidth="142.0" text="10">
+                           <font>
+                              <Font size="55.0" />
+                           </font></TextField>
+                        <TextField fx:id="intel" alignment="CENTER" layoutX="58.0" layoutY="720.0" onAction="#intModChange" onInputMethodTextChanged="#intModChange" prefHeight="133.0" prefWidth="142.0" text="10">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="dex" alignment="CENTER" layoutX="293.0" layoutY="486.0" onAction="#dexModChange" onInputMethodTextChanged="#dexModChange" prefHeight="133.0" prefWidth="142.0" text="10">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="wis" alignment="CENTER" layoutX="299.0" layoutY="720.0" onAction="#wisModChange" onInputMethodTextChanged="#wisModChange" prefHeight="133.0" prefWidth="142.0" text="10">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="con" alignment="CENTER" layoutX="549.0" layoutY="486.0" onAction="#conModChange" onInputMethodTextChanged="#conModChange" prefHeight="133.0" prefWidth="142.0" text="10">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="cha" alignment="CENTER" layoutX="549.0" layoutY="720.0" onAction="#chaModChange" onInputMethodTextChanged="#chaModChange" prefHeight="133.0" prefWidth="142.0" text="10">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="85.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Strength">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Text>
+                        <Text layoutX="324.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dexterity">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Text>
+                        <Text layoutX="557.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Constitution" wrappingWidth="125.93682861328125">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Text>
+                        <Text layoutX="71.0" layoutY="878.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intelligence">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Text>
+                        <Text layoutX="328.0" layoutY="879.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wisdom">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Text>
+                        <Text layoutX="573.0" layoutY="879.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Charisma">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Text>
+                        <Text fx:id="sm" layoutX="114.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+0" wrappingWidth="28.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="chm" layoutX="606.0" layoutY="837.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+0" wrappingWidth="28.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="wm" layoutX="355.0" layoutY="837.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+0" wrappingWidth="28.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="im" layoutX="115.0" layoutY="838.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+0" wrappingWidth="28.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="com" layoutX="605.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+0" wrappingWidth="28.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="dm" layoutX="350.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+0" wrappingWidth="28.13671875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="Name" layoutX="55.0" layoutY="52.0" prefHeight="61.0" prefWidth="255.0" promptText="Name">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="Class" layoutX="55.0" layoutY="128.0" prefHeight="61.0" prefWidth="255.0" promptText="Class">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="Race" layoutX="55.0" layoutY="204.0" prefHeight="61.0" prefWidth="255.0" promptText="Race">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="Alignment" layoutX="55.0" layoutY="281.0" prefHeight="61.0" prefWidth="255.0" promptText="Alignment">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="ac" alignment="CENTER" layoutX="328.0" layoutY="52.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="337.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Armor Class">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="init" alignment="CENTER" layoutX="328.0" layoutY="174.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="351.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initiative">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="speed" alignment="CENTER" layoutX="328.0" layoutY="281.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="344.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed (ft)">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="hp" alignment="CENTER" layoutX="492.0" layoutY="52.0" prefHeight="61.0" prefWidth="160.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="533.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hit Points">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="exp" alignment="CENTER" layoutX="493.0" layoutY="174.0" onAction="#setLevel" onInputMethodTextChanged="#setLevel" prefHeight="61.0" prefWidth="160.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="503.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience Points">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="hd" alignment="CENTER" layoutX="492.0" layoutY="281.0" prefHeight="61.0" prefWidth="160.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="540.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hit Dice">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <CheckBox fx:id="perc" layoutX="816.0" layoutY="333.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Perception (Wis)" />
+                        <CheckBox fx:id="stl" layoutX="816.0" layoutY="458.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="206.0" text="Stealth (Dex)" />
+                        <CheckBox fx:id="sof" layoutX="816.0" layoutY="433.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Sleight of Hand (Dex)" />
+                        <CheckBox fx:id="rel" layoutX="816.0" layoutY="408.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Religion (Int)" />
+                        <CheckBox fx:id="pers" layoutX="816.0" layoutY="383.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Persuasion (Cha)" />
+                        <CheckBox fx:id="nat" layoutX="816.0" layoutY="308.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Nature (Int)" />
+                        <CheckBox fx:id="med" layoutX="816.0" layoutY="284.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="204.0" text="Medicine (Wis)" />
+                        <CheckBox fx:id="intimid" layoutX="816.0" layoutY="233.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Intimidation (Cha)" />
+                        <CheckBox fx:id="ins" layoutX="816.0" layoutY="208.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="204.0" text="Insight (Wis)" />
+                        <CheckBox fx:id="arc" layoutX="816.0" layoutY="109.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="206.0" text="Arcana (Int)" />
+                        <CheckBox fx:id="acro" layoutX="816.0" layoutY="59.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="207.0" text="Acrobatics (Dex)" />
+                        <CheckBox fx:id="his" layoutX="816.0" layoutY="183.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="206.0" text="History (Int)" />
+                        <CheckBox fx:id="dec" layoutX="816.0" layoutY="159.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="204.0" text="Deception (Cha)" />
+                        <CheckBox fx:id="ath" layoutX="816.0" layoutY="134.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Athletics (Str)" />
+                        <CheckBox fx:id="ani" layoutX="816.0" layoutY="84.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="205.0" text="Animal Handling (Wis)" />
+                        <CheckBox fx:id="inv" layoutX="816.0" layoutY="258.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="206.0" text="Investigation (Int)" />
+                        <CheckBox fx:id="sur" layoutX="816.0" layoutY="483.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="206.0" text="Survival (Wis)" />
+                        <TextField fx:id="sur_mod" alignment="CENTER" layoutX="970.0" layoutY="479.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="sof_mod" alignment="CENTER" layoutX="970.0" layoutY="429.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="rel_mod" alignment="CENTER" layoutX="970.0" layoutY="404.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="pers_mod" alignment="CENTER" layoutX="970.0" layoutY="379.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="perc_mod" alignment="CENTER" layoutX="970.0" layoutY="329.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="nat_mod" alignment="CENTER" layoutX="970.0" layoutY="304.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="med_mod" alignment="CENTER" layoutX="970.0" layoutY="279.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="inv_mod" alignment="CENTER" layoutX="970.0" layoutY="254.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="intimid_mod" alignment="CENTER" layoutX="970.0" layoutY="229.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="ins_mod" alignment="CENTER" layoutX="970.0" layoutY="204.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="his_mod" alignment="CENTER" layoutX="970.0" layoutY="179.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="dec_mod" alignment="CENTER" layoutX="970.0" layoutY="155.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="ath_mod" alignment="CENTER" layoutX="970.0" layoutY="130.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="arc_mod" alignment="CENTER" layoutX="970.0" layoutY="105.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="ani_mod" alignment="CENTER" layoutX="970.0" layoutY="80.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="acro_mod" alignment="CENTER" layoutX="970.0" layoutY="55.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="stl_mod" alignment="CENTER" layoutX="970.0" layoutY="454.0" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="player" layoutX="55.0" layoutY="362.0" prefHeight="61.0" prefWidth="255.0" promptText="Player">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="charLvl" alignment="CENTER" layoutX="491.0" layoutY="378.0" prefHeight="61.0" prefWidth="160.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="542.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="1165.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Weapon" wrappingWidth="88.13671875">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="wn" layoutX="1264.0" layoutY="79.0" promptText="Weapon Name" />
+                        <TextField fx:id="ab" layoutX="1427.0" layoutY="79.0" promptText="Attack Bonus" />
+                        <TextField fx:id="damd" layoutX="1589.0" layoutY="79.0" promptText="Damage Done" />
+                        <Button fx:id="wadd" layoutX="1747.0" layoutY="79.0" mnemonicParsing="false" onAction="#wAdd" text="Add" />
+                        <ListView fx:id="wList" layoutX="1264.0" layoutY="125.0" prefHeight="200.0" prefWidth="528.0" />
+                        <Text layoutX="1165.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Armor" wrappingWidth="88.13671875">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="na" layoutX="1264.0" layoutY="409.0" promptText="Name of Armor" />
+                        <TextField fx:id="aacb" layoutX="1427.0" layoutY="409.0" promptText="Armor Class Bonus" />
+                        <Button fx:id="aadd" layoutX="1747.0" layoutY="409.0" mnemonicParsing="false" onAction="#armorAdd" text="Add" />
+                        <ListView fx:id="aList" layoutX="1264.0" layoutY="455.0" prefHeight="200.0" prefWidth="528.0" />
+                        <TextField fx:id="copper" alignment="CENTER" layoutX="863.0" layoutY="578.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="silver" alignment="CENTER" layoutX="863.0" layoutY="650.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="gold" alignment="CENTER" layoutX="863.0" layoutY="720.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="platinum" alignment="CENTER" layoutX="863.0" layoutY="790.0" prefHeight="61.0" prefWidth="114.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="796.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="796.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="796.0" layoutY="757.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="796.0" layoutY="827.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PP">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </content></Tab>
+          <Tab text="Inventory">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="viewInv" layoutX="-1.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="842.0" prefWidth="1988.0" />
+                        <TextField fx:id="noi" layoutX="12.0" layoutY="27.0" prefHeight="38.0" prefWidth="175.0" promptText="Name of Item" />
+                        <TextField fx:id="poi" layoutX="205.0" layoutY="27.0" prefHeight="38.0" prefWidth="175.0" promptText="Price of Item" />
+                        <ComboBox fx:id="cw" layoutX="400.0" layoutY="27.0" prefHeight="38.0" prefWidth="169.0" promptText="Currency Weight" />
+                        <TextField fx:id="woi" layoutX="594.0" layoutY="26.0" prefHeight="38.0" prefWidth="175.0" promptText="Weight of Item" />
+                        <Button fx:id="addItem" layoutX="781.0" layoutY="33.0" mnemonicParsing="false" onAction="#addItem" text="Add Item" />
+                        <Button fx:id="delete" layoutX="888.0" layoutY="33.0" mnemonicParsing="false" onAction="#delInv" text="Delete Selected Item" />
+                     </children>
+                  </Pane>
+               </content></Tab>
+          <Tab text="Spellbook">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="sn" layoutX="14.0" layoutY="64.0" promptText="Name of Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="sl" layoutX="14.0" layoutY="104.0" promptText="Level of Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="sr" layoutX="14.0" layoutY="143.0" promptText="Range of Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="aoe" layoutX="14.0" layoutY="182.0" promptText="Area of Effect">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="sd" layoutX="14.0" layoutY="222.0" promptText="Duration of Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="dd" layoutX="14.0" layoutY="262.0" promptText="Damage Done">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <CheckBox fx:id="v" layoutX="14.0" layoutY="307.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="186.0" text="Verbal Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="m" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="186.0" text="Materials Needed">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="s" layoutX="14.0" layoutY="367.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="186.0" text="Somatic Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="c" layoutX="14.0" layoutY="398.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="186.0" text="Concentration">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </CheckBox>
+                        <ListView fx:id="viewSpells" layoutX="220.0" layoutY="-1.0" prefHeight="927.0" prefWidth="1702.0" />
+                        <Button fx:id="as" layoutX="65.0" layoutY="432.0" mnemonicParsing="false" onAction="#addSpell" text="Add Spell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </content></Tab>
+          <Tab text="Notes/Background">
+               <content>
+                  <TextArea fx:id="notes" prefHeight="200.0" prefWidth="200.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font></TextArea>
+               </content></Tab>
+          <Tab text="Dice Rolls">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="170.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d4" wrappingWidth="61.53515625">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="170.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d6" wrappingWidth="61.53515625">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="170.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d8" wrappingWidth="61.53515625">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="170.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d10" wrappingWidth="61.53515625">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="170.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d12" wrappingWidth="61.53515625">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="170.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d20" wrappingWidth="61.53515625">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="fourRoll" alignment="CENTER" layoutX="232.0" layoutY="61.0" />
+                        <TextField fx:id="sixRoll" alignment="CENTER" layoutX="232.0" layoutY="107.0" />
+                        <TextField fx:id="eightRoll" alignment="CENTER" layoutX="232.0" layoutY="153.0" />
+                        <TextField fx:id="tenRoll" alignment="CENTER" layoutX="232.0" layoutY="199.0" />
+                        <TextField fx:id="twelveRoll" alignment="CENTER" layoutX="232.0" layoutY="246.0" />
+                        <TextField fx:id="twentyRoll" alignment="CENTER" layoutX="232.0" layoutY="292.0" />
+                        <Button fx:id="fourButton" layoutX="406.0" layoutY="61.0" mnemonicParsing="false" onAction="#four" onMouseClicked="#four" text="Roll d4" />
+                        <Button fx:id="sixButton" layoutX="406.0" layoutY="106.0" mnemonicParsing="false" onAction="#six" onMouseClicked="#six" text="Roll d6" />
+                        <Button fx:id="eightButton" layoutX="406.0" layoutY="152.0" mnemonicParsing="false" onAction="#eight" onMouseClicked="#eight" text="Roll d8" />
+                        <Button fx:id="tenButton" layoutX="406.0" layoutY="198.0" mnemonicParsing="false" onAction="#ten" onMouseClicked="#ten" text="Roll d10" />
+                        <Button fx:id="twelveButton" layoutX="406.0" layoutY="245.0" mnemonicParsing="false" onAction="#twelve" onMouseClicked="#twelve" text="Roll d12" />
+                        <Button fx:id="tewentyButton" layoutX="406.0" layoutY="292.0" mnemonicParsing="false" onAction="#twenty" onMouseClicked="#twenty" text="Roll d20" />
+                     </children>
+                  </Pane>
+               </content></Tab>
+          <Tab text="Initiative">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="nocText" layoutX="14.0" layoutY="56.0" promptText="Name of Character">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="inText" layoutX="14.0" layoutY="103.0" promptText="Initiative">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="hlthText" layoutX="14.0" layoutY="151.0" promptText="HP">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="arclText" layoutX="14.0" layoutY="199.0" promptText="Armor Class">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="spText" layoutX="14.0" layoutY="248.0" promptText="Speed">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="dextText" layoutX="14.0" layoutY="296.0" promptText="Dexterity">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="qadd" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" onAction="#initAdd" text="Add">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="qclear" layoutX="148.0" layoutY="345.0" mnemonicParsing="false" onAction="#clearInitQ" text="Clear">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="noc" layoutX="552.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.6708984375">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="sp" layoutX="556.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.6708984375">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="hlth" layoutX="556.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.6708984375">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="arcl" layoutX="556.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.6708984375">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="dext" layoutX="556.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.6708984375">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="nxtInQ" layoutX="387.0" layoutY="182.0" mnemonicParsing="false" onAction="#initQNext" text="Next" />
+                        <Text layoutX="321.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click next to begin Queue" wrappingWidth="191.1376953125">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
