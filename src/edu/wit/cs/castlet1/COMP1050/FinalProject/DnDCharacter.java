@@ -31,7 +31,7 @@ public class DnDCharacter implements Serializable, Comparable<DnDCharacter> {
 	SpellBook spllBk;
 	/**
 	 * Constructor for each character (PC & NPC)
-	 * @param name character name (first and last)
+//	 * @param name character name (first and last)
 	 * @return loaded character from specified file
 	 */
 	public static DnDCharacter loadChar(String filePath, DnDCharacter c){
@@ -53,7 +53,7 @@ public class DnDCharacter implements Serializable, Comparable<DnDCharacter> {
 	}
 	/**
 	 * Saves character Object to the save folder, DnDHelper, in the Documents folder.
-	 * @param name character name (stats.get("charNme"))
+//	 * @param name character name (stats.get("charNme"))
 	 */
 	public void saveChar(){
 		String direc=System.getProperty("user.home")+File.separator+"Documents"+File.separator+"DnDHelper";
